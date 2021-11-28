@@ -75,39 +75,7 @@ public class Prueba {
 									int posicionTablero6 = scNumero.nextInt();
 									int posicionTablero7 = scNumero.nextInt();
 									int posicionTablero8 = scNumero.nextInt();
-									int posicionTablero9 = scNumero.nextInt();
-									int posicionTablero10 = scNumero.nextInt();
-									int posicionTablero11 = scNumero.nextInt();
-									int posicionTablero12 = scNumero.nextInt();
-									int posicionTablero13 = scNumero.nextInt();
-									int posicionTablero14 = scNumero.nextInt();
-									int posicionTablero15 = scNumero.nextInt();
-									int posicionTablero16= scNumero.nextInt();
-									int posicionTablero17= scNumero.nextInt();
-									int posicionTablero18= scNumero.nextInt();
-									int posicionTablero19= scNumero.nextInt();
-									int posicionTablero20= scNumero.nextInt();
-									int posicionTablero21= scNumero.nextInt();
-									int posicionTablero22= scNumero.nextInt();
-									int posicionTablero23= scNumero.nextInt();
-									int posicionTablero24= scNumero.nextInt();
-									int posicionTablero25= scNumero.nextInt();
-									int posicionTablero26= scNumero.nextInt();
-									int posicionTablero27= scNumero.nextInt();
-									int posicionTablero28= scNumero.nextInt();
-									int posicionTablero29= scNumero.nextInt();
-									int posicionTablero30= scNumero.nextInt();
-									int posicionTablero31= scNumero.nextInt();
-									int posicionTablero32= scNumero.nextInt();
-									int posicionTablero33 = scNumero.nextInt();
-									int posicionTablero34= scNumero.nextInt();
-									int posicionTablero35= scNumero.nextInt();
-									int posicionTablero36= scNumero.nextInt();
-									int posicionTablero37= scNumero.nextInt();
-									int posicionTablero38= scNumero.nextInt();
-									int posicionTablero39= scNumero.nextInt();
-									int posicionTablero40= scNumero.nextInt();
-										
+							
 										System.out.println(" ");
 										
 										
