@@ -1,5 +1,7 @@
 package plantas;
 
+import java.util.Random;
+
 import unidades.Unidades;
 
 public abstract class  Plantas extends Unidades {
@@ -11,6 +13,12 @@ public abstract class  Plantas extends Unidades {
 		super(nombre, salud, ataque, defensa);
 		this.costeTrebol =  costeTrebol;
 		
+	}
+	
+	public void atacar(Unidades unidad) {
+		
+		//Ataque mínimo: 0, Maximo: según nivel de ataque
+		 unidad.setSalud(unidad.getSalud() - (int) (Math.random()*this.ataque + 0));
 	}
 	
 		

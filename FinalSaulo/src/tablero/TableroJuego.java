@@ -1,10 +1,12 @@
 package tablero;
 
 
+
 public class TableroJuego {
 
 	private static TableroJuego tablero;
 	private String[][] tableroJuego = new String[5][11];
+	
 	
 
 	private TableroJuego() {

@@ -27,7 +27,7 @@ public abstract class Unidades implements IUnidades {
 	
 	@Override
 	public void atacar(Unidades unidad) {
-		unidad.salud = unidad.salud - this.ataque;
+		unidad.setSalud(unidad.getSalud() - this.ataque);
 	}
 
 	public String getNombre() {

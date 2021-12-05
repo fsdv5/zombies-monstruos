@@ -11,7 +11,9 @@ public class PlantaCarnivora extends Plantas {
 	}
 
 	
+	//Contador turnos
 	
+
 	
 	@Override
 	public void mover() {} // no se mueve
@@ -19,3 +21,6 @@ public class PlantaCarnivora extends Plantas {
 	
 
 }
+
+
+
