@@ -11,6 +11,7 @@ public class PlantaCarnivora extends Plantas {
 	}
 
 	
+	
 	//Contador turnos
 	
 

@@ -1,6 +1,6 @@
 package tablero;
 
-
+/*
 
 public class TableroJuego {
 
@@ -67,3 +67,4 @@ public class TableroJuego {
 	}
 
 }
+*/

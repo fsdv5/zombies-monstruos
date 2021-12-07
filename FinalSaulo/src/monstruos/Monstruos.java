@@ -10,11 +10,23 @@ public abstract class Monstruos extends Unidades {
 		super(nombre, salud, ataque, defensa);
 		
 	}
+	
+	public void atacar(Unidades unidad) {
+		unidad.setSalud(unidad.getSalud() - this.ataque);
+	}
+	
 
+
+    public String localizador() {
+        return "M(" + super.getSalud()+")";
+    }
+	
 	@Override
 	public abstract void mover();
 		
 	}
+
+
 	
 	
 

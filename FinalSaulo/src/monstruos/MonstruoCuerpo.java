@@ -7,6 +7,8 @@ public class MonstruoCuerpo extends Monstruos{
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
 	@Override
 	public void mover() {
 		// TODO Auto-generated method stub

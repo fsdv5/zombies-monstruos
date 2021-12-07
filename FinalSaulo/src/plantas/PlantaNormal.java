@@ -11,6 +11,8 @@ public class PlantaNormal extends Plantas {
 	}
 
 
+	
+
 
 	@Override
 	public void mover() {} // no se mueve

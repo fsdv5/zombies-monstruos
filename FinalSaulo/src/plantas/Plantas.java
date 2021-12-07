@@ -15,6 +15,11 @@ public abstract class  Plantas extends Unidades {
 		
 	}
 	
+	
+    public String localizador() {
+        return "P(" + super.getSalud()+")";
+    }
+	
 	public void atacar(Unidades unidad) {
 		
 		//Ataque mínimo: 0, Maximo: según nivel de ataque

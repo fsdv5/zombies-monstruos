@@ -14,6 +14,7 @@ public abstract class Unidades implements IUnidades {
 	
 
 	
+	
 	public Unidades(String nombre, int salud, int ataque, int defensa) {
 		super();
 		this.nombre = nombre;
@@ -23,12 +24,16 @@ public abstract class Unidades implements IUnidades {
 	}
 	
 
+	public abstract String localizador();
+	
+
 	public abstract void mover();
 	
 	@Override
 	public void atacar(Unidades unidad) {
 		unidad.setSalud(unidad.getSalud() - this.ataque);
 	}
+	
 
 	public String getNombre() {
 		return nombre;
@@ -77,5 +82,7 @@ public abstract class Unidades implements IUnidades {
 	public void setPosY(int posY) {
 		this.posY = posY;
 	}
+
+
 
 }

@@ -6,7 +6,8 @@ public class MonstruoDistancia extends Monstruos {
 		super("Monstruo AD", 50, 10, 10);
 		// TODO Auto-generated constructor stub
 	}
-
+	
+   
 	@Override
 	public void mover() {
 		// TODO Auto-generated method stub

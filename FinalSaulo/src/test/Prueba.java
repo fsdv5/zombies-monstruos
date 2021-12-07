@@ -5,7 +5,6 @@ import Usuario.Usuario;
 import monstruos.*;
 import plantas.*;
 import tablero.Tablero;
-import tablero.TableroJuego;
 import unidades.Unidades;
 
 public class Prueba {
@@ -20,9 +19,11 @@ public class Prueba {
 		Plantas p2 = FabricaPlantas.construir("PlantaCarnivora");
 		Plantas p3 = FabricaPlantas.construir("PlantaCarnivora");
 		
-		Monstruos m1 = FabricaMonstruos.construir("MonstruoCuerpo");
+		
+		Monstruos m1 = FabricaMonstruos.construir("MonstruoDistancia");
 		Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
 		Monstruos m3 = FabricaMonstruos.construir("MonstruoCuerpo");
+		
 		
 		/*
 		System.out.println(m1.getSalud());
@@ -35,8 +36,6 @@ public class Prueba {
 		ta.agregarUnidad(p1, 1, 1);
 		
 		ta.agregarUnidad(p2, 2, 1);
-	
-		*/
 		ta.agregarUnidad(p3, 5, 1);
 		
 		ta.agregarUnidad(m1, 6, 0);
@@ -45,6 +44,35 @@ public class Prueba {
 		ta.agregarUnidad(m3, 9, 1);
 		
 		ta.retornarOcupados(4,0);
+	
+		*/
+		
+		ta.pintarTablero();
+		/*
+		ta.agregarUnidad(p1, 1, 1);
+		ta.agregarUnidad(p2, 0, 1);
+		ta.agregarUnidad(m1, 8, 1);
+		*/
+		
+		ta.agregarUnidad(p1,1, 1);		
+		ta.agregarUnidad(p2,1, 0);
+		ta.agregarUnidad(p3,0, 1);
+		ta.agregarUnidad(m1,1, 7);
+		ta.agregarUnidad(m2,0, 8);
+		ta.agregarUnidad(m3,1, 6);
+		
+		ta.pintarTablero();
+		
+		m1.atacar(p1);
+		ta.pintarTablero();
+		m1.atacar(p1);
+		m1.atacar(p1);
+		m1.atacar(p1);
+		ta.pintarTablero();
+		
+
+		
+		
 			
 			
 		}
@@ -87,7 +115,3 @@ public class Prueba {
 		
 		// clima singleton 
 		
-	
-	
-
-
