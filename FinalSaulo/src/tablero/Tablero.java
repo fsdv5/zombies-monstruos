@@ -42,25 +42,25 @@ public class Tablero {
 	    }
 	
 	
-	public void agregarUnidad(Unidades unidad, int ancho, int alto) {
+	public void agregarUnidad(Unidades unidad, int y, int x) { //corregir validaciones
 		
-		if(unidad instanceof Monstruos && alto<6) {			
+		if(unidad instanceof Monstruos && x<6) {			
 			System.out.println("No puede agregar un monstruo en esa posicion");
 			
-		} else if (unidad instanceof Plantas  && alto>3 ) {
+		} else if (unidad instanceof Plantas  && x>3 ) {
 			System.out.println("No puede agregar una planta en esa posicion");
 			
 		} else {
 			
-			if(TableroJuego[ancho][alto] == null) {
+			if(TableroJuego[y][x] == null) {
 			
 			if(unidad instanceof Plantas) {
-				TableroJuego[ancho][alto]= unidad;
+				TableroJuego[y][x]= unidad;
 		System.out.println("Planta agregada correctamente");
 		
 		} else if(unidad instanceof Monstruos) {
 			
-			TableroJuego[ancho][alto] = unidad;
+			TableroJuego[y][x] = unidad;
 			
 			System.out.println("Monstruo agregado correctamente");
 				
@@ -74,10 +74,10 @@ public class Tablero {
 																			 }
 	// metodo para verificar que hay en esa posicion
 	
-	public void retornarOcupados(int x, int y) { 
+	public void retornarOcupados(int y, int x) { 
 				
 		
-			if(TableroJuego[x][y]!=null) {
+			if(TableroJuego[y][x]!=null) {
 			System.out.println("La posicion est ocupada por: " + TableroJuego[x][y].getNombre());
 			} else {
 				System.out.println("La posicion consultada est libre");

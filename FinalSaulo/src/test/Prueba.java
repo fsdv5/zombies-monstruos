@@ -54,19 +54,14 @@ public class Prueba {
 		ta.agregarUnidad(m1, 8, 1);
 		*/
 		
-		ta.agregarUnidad(p1,1, 1);		
-		ta.agregarUnidad(p2,1, 0);
-		ta.agregarUnidad(p3,0, 1);
-		ta.agregarUnidad(m1,1, 7);
-		ta.agregarUnidad(m2,0, 8);
-		ta.agregarUnidad(m3,1, 6);
+		ta.agregarUnidad(p1,1, 3);		
+		ta.agregarUnidad(m1,0, 7);
+		
 		
 		ta.pintarTablero();
 		
 		m1.atacar(p1);
 		ta.pintarTablero();
-		m1.atacar(p1);
-		m1.atacar(p1);
 		m1.atacar(p1);
 		ta.pintarTablero();
 		
