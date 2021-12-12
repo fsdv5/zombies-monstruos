@@ -46,6 +46,18 @@ public class Prueba {
 		Plantas p2 = FabricaPlantas.construir("PlantaCarnivora");
 		Plantas p3 = FabricaPlantas.construir("PlantaCarnivora");
 		
+		try {
+			ta.agregarPlanta(p1, 1, 1);
+		} catch (ExcepcionAgregarPlanta e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		try {
+			ta.agregarPlanta(p2, 1, 1);
+		} catch (ExcepcionAgregarPlanta e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
 		
 		Monstruos m1 = FabricaMonstruos.construir("MonstruoDistancia");
 		Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
@@ -112,7 +124,7 @@ public class Prueba {
 			int numeroY = (int)(Math.random()*10+0);
 			int numeroX = (int)(Math.random()*(10-6+1)+6);
 			
-			ta.agregarUnidad(m1, numeroY, numeroX);
+			ta.agregarMonstruo(m1, numeroY, numeroX);
 			
 			}
 			
@@ -122,7 +134,7 @@ public class Prueba {
 				int numeroY = (int)(Math.random()*10+0);
 				int numeroX = (int)(Math.random()*(10-6+1)+6);
 				
-				ta.agregarUnidad(m2, numeroY, numeroX);
+				ta.agregarMonstruo(m2, numeroY, numeroX);
 				
 			}
 			
@@ -141,7 +153,7 @@ public class Prueba {
 				int numeroY = (int)(Math.random()*10+0);
 				int numeroX = (int)(Math.random()*(10-6+1)+6);
 				
-				ta.agregarUnidad(m1, numeroY, numeroX);
+				ta.agregarMonstruo(m1, numeroY, numeroX);
 				
 				}
 				
@@ -151,7 +163,7 @@ public class Prueba {
 					int numeroY = (int)(Math.random()*10+0);
 					int numeroX = (int)(Math.random()*(10-6+1)+6);
 					
-					ta.agregarUnidad(m2, numeroY, numeroX);
+					ta.agregarMonstruo(m2, numeroY, numeroX);
 					
 				}
 				
@@ -169,7 +181,7 @@ public class Prueba {
 				int numeroY = (int)(Math.random()*10+0);
 				int numeroX = (int)(Math.random()*(10-6+1)+6);
 				
-				ta.agregarUnidad(m1, numeroY, numeroX);
+				ta.agregarMonstruo(m1, numeroY, numeroX);
 				
 				}
 				
@@ -179,7 +191,7 @@ public class Prueba {
 					int numeroY = (int)(Math.random()*10+0);
 					int numeroX = (int)(Math.random()*(10-6+1)+6);
 					
-					ta.agregarUnidad(m2, numeroY, numeroX);
+					ta.agregarMonstruo(m2, numeroY, numeroX);
 					
 				}
 				

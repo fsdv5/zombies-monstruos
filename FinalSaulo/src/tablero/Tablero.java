@@ -48,30 +48,25 @@ public class Tablero {
 	        
 	        System.out.println(" ");
 	    }
-	
-	
-	public void agregarUnidad(Unidades unidad, int y, int x) throws ExcepcionAgregarPlanta  { //corregir validaciones
-					
-			
-			
+
+	   
+	public void agregarMonstruo(Monstruos monstruo, int y, int x) {
 		
-			if(unidad instanceof Plantas) {
-				if(TableroJuego[y][x] == null) {
-				
-				TableroJuego[y][x]= unidad;
-		System.out.println("Planta agregada correctamente");
-				} else {
-					throw new ExcepcionAgregarPlanta("La posicion se encuentra ocupada. Mejor suerte la proxima");
-				}
+		TableroJuego[y][x] = monstruo;
+	}
+	
+
+	public void agregarPlanta(Plantas planta, int y, int x) throws ExcepcionAgregarPlanta {
 		
-		 } else if(unidad instanceof Monstruos) {
-		 
-		 TableroJuego[y][x] = unidad;
-		 
-			/* System.out.println("Monstruo agregado correctamente"); */
-				
-			}
-			} 
+		if(TableroJuego[y][x] == null) {
+			
+			TableroJuego[y][x] = planta;
+			System.out.println("Planta agregada correctamente. Posicion del tablero: " + y + ", " + x);
+		} else {
+			throw new ExcepcionAgregarPlanta("La posicion se encuentra ocupada. La proxima elegí bien");
+	}
+	}
+	
 			
 		
 				
