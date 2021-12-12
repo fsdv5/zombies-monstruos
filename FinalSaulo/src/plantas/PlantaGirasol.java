@@ -7,6 +7,10 @@ public class PlantaGirasol extends Plantas{
 		super("PlantaGirasol", 30, 3, 2, 5);
 		
 	}
+	
+	public String localizador() {
+        return "PGI(" + super.getSalud()+")";
+    }
 
 	@Override
 	public void mover() {} // no se mueve

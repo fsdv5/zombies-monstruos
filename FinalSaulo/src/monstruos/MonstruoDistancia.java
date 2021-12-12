@@ -7,6 +7,11 @@ public class MonstruoDistancia extends Monstruos {
 		// TODO Auto-generated constructor stub
 	}
 	
+
+    public String localizador() {
+        return "MD(" + super.getSalud()+")";
+    }
+	
    
 	@Override
 	public void mover() {

@@ -8,7 +8,11 @@ public class MonstruoCuerpo extends Monstruos{
 	}
 
 	
-	
+
+    public String localizador() {
+        return "MC(" + super.getSalud()+")";
+    }
+    
 	@Override
 	public void mover() {
 		// TODO Auto-generated method stub

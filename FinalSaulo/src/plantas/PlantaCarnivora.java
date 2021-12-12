@@ -10,7 +10,9 @@ public class PlantaCarnivora extends Plantas {
 		
 	}
 
-	
+	public String localizador() {
+        return "PC(" + super.getSalud()+")";
+    }
 	
 	//Contador turnos
 	

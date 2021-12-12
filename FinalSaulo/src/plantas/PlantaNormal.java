@@ -11,7 +11,9 @@ public class PlantaNormal extends Plantas {
 	}
 
 
-	
+	public String localizador() {
+        return "PN(" + super.getSalud()+")";
+    }
 
 
 	@Override

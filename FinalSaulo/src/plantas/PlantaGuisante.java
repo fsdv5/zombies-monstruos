@@ -6,6 +6,10 @@ public class PlantaGuisante extends Plantas{
 		super("PlantaGuisante", 35, 4, 3, 8);
 		
 	}
+	
+	public String localizador() {
+        return "PGU(" + super.getSalud()+")";
+    }
 
 	@Override
 	public void mover() {} // no se mueve

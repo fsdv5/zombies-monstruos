@@ -17,9 +17,6 @@ public abstract class Monstruos extends Unidades {
 	
 
 
-    public String localizador() {
-        return "M(" + super.getSalud()+")";
-    }
 	
 	@Override
 	public abstract void mover();
