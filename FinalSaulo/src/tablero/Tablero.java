@@ -50,23 +50,19 @@ public class Tablero {
 	    }
 	
 	
-	public void agregarUnidad(Unidades unidad, int y, int x) { //corregir validaciones
+	public void agregarUnidad(Unidades unidad, int y, int x) throws ExcepcionAgregarPlanta  { //corregir validaciones
+					
+			
+			
 		
-		/*
-		 * if(unidad instanceof Monstruos && x<6) {
-		 * System.out.println("No puede agregar un monstruo en esa posicion");
-		 * 
-		 * } else if (unidad instanceof Plantas && x>3 ) {
-		 * System.out.println("No puede agregar una planta en esa posicion");
-		 * 
-		 * } else {
-		 */
-			
-			if(TableroJuego[y][x] == null) {
-			
 			if(unidad instanceof Plantas) {
+				if(TableroJuego[y][x] == null) {
+				
 				TableroJuego[y][x]= unidad;
 		System.out.println("Planta agregada correctamente");
+				} else {
+					throw new ExcepcionAgregarPlanta("La posicion se encuentra ocupada. Mejor suerte la proxima");
+				}
 		
 		 } else if(unidad instanceof Monstruos) {
 		 
@@ -75,11 +71,33 @@ public class Tablero {
 			/* System.out.println("Monstruo agregado correctamente"); */
 				
 			}
-			} else {
+			} 
+			
 		
-				/* System.out.println("Posicion ocupada. Por favor seleccione otra"); */
+				
+		
+			
+	
+	
+	//Limpieza de unidades muertas
+	
+	public void limpiarMuertos() {
+		
+		for(int i=0; i<TableroJuego.length; i++) {
+			for(int j=0; j<TableroJuego.length; j++) {
+				
+		if(TableroJuego[i][j]!=null) {
+			
+		
+		if(TableroJuego[i][j].getSalud()<1) {
+			
+			System.out.println(TableroJuego[i][j].getNombre() + " ha muerto");
+			TableroJuego[i][j] = null;
 		}
-			}
+			 
+		} else {}
+			}}
+	}
 		
 																			 
 	// metodo para verificar que hay en esa posicion

@@ -7,10 +7,13 @@ import java.util.Scanner;
 import Usuario.Usuario;
 import monstruos.*;
 import plantas.*;
+import tablero.ExcepcionAgregarPlanta;
 import tablero.Tablero;
 import unidades.Unidades;
 
 public class Prueba {
+
+
 
 	
 	
@@ -48,7 +51,19 @@ public class Prueba {
 		Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
 		/* Monstruos m3 = FabricaMonstruos.construir("MonstruoCuerpo"); */
 		
+
 	
+		
+		p2.atacar(p1);
+		p2.atacar(p1);
+		p2.atacar(p1);
+		p2.atacar(p1);
+	
+		
+		ta.limpiarMuertos();
+	
+		
+		
 		System.out.println("TABLERO ");
 		System.out.println("-------------------");
 		
@@ -169,6 +184,8 @@ public class Prueba {
 				}
 				
 				ta.pintarTablero();
+				
+				
 				
 				
 		/*
