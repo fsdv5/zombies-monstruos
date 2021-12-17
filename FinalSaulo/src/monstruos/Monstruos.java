@@ -6,6 +6,7 @@ public abstract class Monstruos extends Unidades {
 	
 	/** Atributo que fija los avances del monstruo por cada turno de partida*/
 	protected int velocidad;
+	/** Atributo que fija los ataques por segundo del monstruo por cada turno de partida*/
 	protected int ataquexsegundoZ;
 	
 	public Monstruos(String nombre, int salud, int ataque, int defensa,int contador) {
