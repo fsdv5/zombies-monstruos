@@ -1,9 +1,5 @@
 package test;
-
-
 import java.util.Scanner;
-
-
 import Usuario.Usuario;
 import monstruos.*;
 import plantas.*;
@@ -22,6 +18,8 @@ public class Prueba {
 		  Scanner scTexto = new Scanner(System.in);
 			
 	      Scanner scNumero = new Scanner(System.in);
+	      
+	      Usuario us = new Usuario("Facundo");
 		
 		int opcion = 0;
 		
@@ -37,8 +35,10 @@ public class Prueba {
 					System.out.println("[4] -> Planta Guisante; Caractersticas: Coste de Trebol 4, Vida 35, Ataque 3, Defensa 8, Puede atacar a distancia");
 					
 					System.out.println(" ");
+					
+					System.out.println("Que planta desea agregar? tiene disponible:" + us.getRecursos());
 
-		
+					
 		Tablero ta = new Tablero();
 		
 		
@@ -61,7 +61,7 @@ public class Prueba {
 		
 		Monstruos m1 = FabricaMonstruos.construir("MonstruoDistancia");
 		Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
-		/* Monstruos m3 = FabricaMonstruos.construir("MonstruoCuerpo"); */
+		Monstruos m3 = FabricaMonstruos.construir("MonstruoCuerpo"); 
 		
 
 	

@@ -4,25 +4,31 @@ import unidades.Unidades;
 
 public abstract class Monstruos extends Unidades {
 	
+	/** Atributo que fija los avances del monstruo por cada turno de partida*/
+	protected int velocidad;
 	
-
-	public Monstruos(String nombre, int salud, int ataque, int defensa) {
-		super(nombre, salud, ataque, defensa);
+	public Monstruos(String nombre, int salud, int ataque, int defensa,int contador) {
+		super(nombre, salud, ataque, defensa,contador);
 		
 	}
 	
 	public void atacar(Unidades unidad) {
 		unidad.setSalud(unidad.getSalud() - this.ataque);
 	}
-	
-
 
 	
-	@Override
-	public abstract void mover();
-		
+	public int getVelocidad() {
+		return velocidad;
 	}
 
+	public void setVelocidad(int velocidad) {
+		this.velocidad = velocidad;
+	}
+	
+
+}
+	
+	
 
 	
 	
