@@ -6,6 +6,7 @@ public abstract class Unidades implements IUnidades {
 	protected int salud;
 	protected int costeTrebol;
 	protected int ataque;
+	protected int contador;
 	protected int posX;
 	protected int posY;
 	protected int defensa;
@@ -15,14 +16,25 @@ public abstract class Unidades implements IUnidades {
 
 	
 	
-	public Unidades(String nombre, int salud, int ataque, int defensa) {
+	public Unidades(String nombre, int salud, int ataque, int defensa, int contador) {
 		super();
 		this.nombre = nombre;
 		this.salud = salud;
 		this.ataque = ataque;
 		this.defensa = defensa;
+		this.contador = contador;
 	}
 	
+
+	public int getContador() {
+		return contador;
+	}
+
+
+	public void setContador(int contador) {
+		this.contador = contador;
+	}
+
 
 	public abstract String localizador();
 	

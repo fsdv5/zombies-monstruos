@@ -1,17 +1,21 @@
 package test;
+<<<<<<< HEAD
 import Climas.Soleado;
 import Climas.Lluvioso;
 import Climas.Nublado;
 
+=======
+>>>>>>> branch 'NuevasPruebas' of https://gitlab.com/sadfacundo/finalsaulo.git
 import java.util.Scanner;
-
-
 import Usuario.Usuario;
 import monstruos.*;
 import plantas.*;
 import tablero.ExcepcionAgregarPlanta;
 import tablero.Tablero;
 import unidades.Unidades;
+import Climas.Soleado;
+import Climas.Lluvioso;
+import Climas.Nublado;
 
 public class Prueba {
 
@@ -24,6 +28,8 @@ public class Prueba {
 		  Scanner scTexto = new Scanner(System.in);
 			
 	      Scanner scNumero = new Scanner(System.in);
+	      
+	      Usuario us = new Usuario("Facundo");
 		
 		int opcion = 0;
 		
@@ -39,8 +45,10 @@ public class Prueba {
 					System.out.println("[4] -> Planta Guisante; Caractersticas: Coste de Trebol 4, Vida 35, Ataque 3, Defensa 8, Puede atacar a distancia");
 					
 					System.out.println(" ");
+					
+					System.out.println("Que planta desea agregar? tiene disponible:" + us.getRecursos());
 
-		
+					
 		Tablero ta = new Tablero();
 		
 		
@@ -57,7 +65,7 @@ public class Prueba {
 		
 		Monstruos m1 = FabricaMonstruos.construir("MonstruoDistancia");
 		Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
-		/* Monstruos m3 = FabricaMonstruos.construir("MonstruoCuerpo"); */
+		Monstruos m3 = FabricaMonstruos.construir("MonstruoCuerpo"); 
 		
 		
 	
@@ -136,7 +144,11 @@ public class Prueba {
 			lluvioso.AgregarVidayPoder(p2);
 			lluvioso.AgregarVidayPoder(p3);
 		}
+<<<<<<< HEAD
 	
+=======
+		
+>>>>>>> branch 'NuevasPruebas' of https://gitlab.com/sadfacundo/finalsaulo.git
 		
 		System.out.println ("Qué nivel dificultad deseas? Presiona 1 para FÁCIL, 2 para NORMAL o 3 para DÍFICIL");
 		

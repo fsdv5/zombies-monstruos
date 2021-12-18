@@ -1,16 +1,31 @@
 package plantas;
-
 import java.util.Random;
-
+import tablero.Tablero;
 import unidades.Unidades;
 
 public abstract class  Plantas extends Unidades {
 	
+	/** Atributo que controla el ataque por segundo de cada planta*/
 	
+	protected int ataquexsegundo;
 	
 
-	public Plantas(String nombre, int salud, int costeTrebol, int ataque, int defensa) {
-		super(nombre, salud, ataque, defensa);
+	public int getAtaquexsegundo() {
+		return ataquexsegundo;
+	}
+
+
+
+
+	public void setAtaquexsegundo(int ataquexsegundo) {
+		this.ataquexsegundo = ataquexsegundo;
+	}
+
+
+
+
+	public Plantas(String nombre, int salud, int costeTrebol, int ataque, int defensa,int contador) {
+		super(nombre, salud, ataque, defensa ,contador);
 		this.costeTrebol =  costeTrebol;
 		
 	}
@@ -27,7 +42,15 @@ public abstract class  Plantas extends Unidades {
 	
 	
 		
+<<<<<<< HEAD
 }
+=======
+	public abstract void mover();
+		
+	
+}
+	
+>>>>>>> branch 'NuevasPruebas' of https://gitlab.com/sadfacundo/finalsaulo.git
 	
 	
 		

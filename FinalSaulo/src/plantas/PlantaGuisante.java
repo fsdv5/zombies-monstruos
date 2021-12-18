@@ -2,8 +2,9 @@ package plantas;
 
 public class PlantaGuisante extends Plantas{
 	
-	public PlantaGuisante(String nombre, int salud, int costeTrebol, int ataque, int defensa) {
-		super("PlantaGuisante", 35, 4, 3, 8);
+	public PlantaGuisante(String nombre, int salud, int costeTrebol, int ataque, int defensa,int contador) {
+		super("PlantaGuisante", 35, 4, 3, 8,0);
+		super.setAtaquexsegundo(1);
 		
 	}
 	
