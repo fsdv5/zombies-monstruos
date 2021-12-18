@@ -21,15 +21,12 @@ public class PlantaGirasol extends Plantas{
         return "PGI(" + super.getSalud()+")";
     }
 
-<<<<<<< HEAD
 
-	
-=======
 	@Override
 	public void mover() {} // no se mueve
 
 
->>>>>>> branch 'NuevasPruebas' of https://gitlab.com/sadfacundo/finalsaulo.git
+
 	
 	
 	

@@ -14,6 +14,12 @@ public class PlantaCarnivora extends Plantas {
 	public String localizador() {
         return "PC(" + super.getSalud()+")";
     }
+
+	@Override
+	public void mover() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	//Contador turnos
 	

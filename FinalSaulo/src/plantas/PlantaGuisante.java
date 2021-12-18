@@ -12,6 +12,12 @@ public class PlantaGuisante extends Plantas{
         return "PGU(" + super.getSalud()+")";
     }
 
+	@Override
+	public void mover() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	
 	

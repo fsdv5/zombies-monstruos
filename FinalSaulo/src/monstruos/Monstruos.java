@@ -18,14 +18,10 @@ public abstract class Monstruos extends Unidades {
 		unidad.setSalud(unidad.getSalud() - this.ataque);
 	}
 
-<<<<<<< HEAD
-
-		
-=======
 	
 	public int getVelocidad() {
 		return velocidad;
->>>>>>> branch 'NuevasPruebas' of https://gitlab.com/sadfacundo/finalsaulo.git
+
 	}
 
 	public void setVelocidad(int velocidad) {

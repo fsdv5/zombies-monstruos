@@ -1,11 +1,10 @@
 package test;
-<<<<<<< HEAD
+
 import Climas.Soleado;
 import Climas.Lluvioso;
 import Climas.Nublado;
 
-=======
->>>>>>> branch 'NuevasPruebas' of https://gitlab.com/sadfacundo/finalsaulo.git
+
 import java.util.Scanner;
 import Usuario.Usuario;
 import monstruos.*;
@@ -144,11 +143,7 @@ public class Prueba {
 			lluvioso.AgregarVidayPoder(p2);
 			lluvioso.AgregarVidayPoder(p3);
 		}
-<<<<<<< HEAD
-	
-=======
-		
->>>>>>> branch 'NuevasPruebas' of https://gitlab.com/sadfacundo/finalsaulo.git
+
 		
 		System.out.println ("Qué nivel dificultad deseas? Presiona 1 para FÁCIL, 2 para NORMAL o 3 para DÍFICIL");
 		

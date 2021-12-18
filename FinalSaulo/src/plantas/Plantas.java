@@ -42,15 +42,12 @@ public abstract class  Plantas extends Unidades {
 	
 	
 		
-<<<<<<< HEAD
-}
-=======
+
 	public abstract void mover();
 		
 	
 }
 	
->>>>>>> branch 'NuevasPruebas' of https://gitlab.com/sadfacundo/finalsaulo.git
 	
 	
 		
