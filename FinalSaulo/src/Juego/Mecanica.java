@@ -34,7 +34,7 @@ public class Mecanica {
 
 	}
 	
-	public void posicionarPlanta() {
+	public void empezarJuego() {
 		System.out.println("-------------------------------------------------------------");
 		System.out.println("\t Es momento de posicionar sus plantas en el tablero");
 		System.out.println("");
