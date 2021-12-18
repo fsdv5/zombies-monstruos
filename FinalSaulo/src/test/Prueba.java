@@ -6,6 +6,9 @@ import plantas.*;
 import tablero.ExcepcionAgregarPlanta;
 import tablero.Tablero;
 import unidades.Unidades;
+import Climas.Soleado;
+import Climas.Lluvioso;
+import Climas.Nublado;
 
 public class Prueba {
 
@@ -105,6 +108,41 @@ public class Prueba {
 		ta.pintarTablero();
 		
 		System.out.println(" ");
+		
+		Soleado soleado= new Soleado();
+		Nublado nublado = new Nublado();
+		Lluvioso lluvioso = new Lluvioso();
+		
+		int NRClimas = (int)(Math.random()*3+0);
+	
+		
+		
+		if (NRClimas == 0) {
+			
+			System.out.println("Jugarás en un clima soleado, preparate!");
+			
+			soleado.BajarDefensa(p1);
+			soleado.BajarDefensa(p2);
+			soleado.BajarDefensa(p3);
+		}
+		
+		else if (NRClimas == 1) {
+			
+			System.out.println("Jugarás en un clima nublado, preparate!");
+			
+			nublado.DosXTurno(m1);
+			nublado.DosXTurno(m2);
+		}
+		
+		else if (NRClimas == 2) {
+			
+			System.out.println("Jugarás en un clima lluvioso, preparate!");
+			
+			lluvioso.AgregarVidayPoder(p1);
+			lluvioso.AgregarVidayPoder(p2);
+			lluvioso.AgregarVidayPoder(p3);
+		}
+		
 		
 		System.out.println ("Qué nivel dificultad deseas? Presiona 1 para FÁCIL, 2 para NORMAL o 3 para DÍFICIL");
 		
