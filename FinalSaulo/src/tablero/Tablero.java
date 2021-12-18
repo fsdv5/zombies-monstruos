@@ -61,9 +61,13 @@ public class Tablero {
 		if(TableroJuego[y][x] == null) {
 			
 			TableroJuego[y][x] = planta;
+			System.out.println("-------------------------------------------------------------");
 			System.out.println("Planta agregada correctamente. Posicion del tablero: " + y + ", " + x);
+			System.out.println("-------------------------------------------------------------");
 		} else {
-			throw new ExcepcionAgregarPlanta("La posicion se encuentra ocupada. La proxima elegí bien");
+			System.out.println("-------------------------------------------------------------");
+			throw new ExcepcionAgregarPlanta("\tLa posicion se encuentra ocupada. La proxima elegí bien");
+			
 	}
 	}
 	
