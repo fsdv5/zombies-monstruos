@@ -27,7 +27,7 @@ public abstract class Unidades implements IUnidades {
 	public abstract String localizador();
 	
 
-	public abstract void mover();
+	
 	
 	@Override
 	public void atacar(Unidades unidad) {
@@ -65,6 +65,14 @@ public abstract class Unidades implements IUnidades {
 
 	public void setAtaque(int ataque) {
 		this.ataque = ataque;
+	}
+	
+	public int getDefensa(){
+		return defensa;
+	}
+	
+	public void setDefensa(int defensa){
+		this.defensa = defensa;
 	}
 
 	public int getPosX() {

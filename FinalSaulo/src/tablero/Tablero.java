@@ -22,7 +22,7 @@ public class Tablero {
 	            String lineaArriba = " ";
 	            
 	            for (int j=0; j < TableroJuego[i].length; j++) {
-	                if(j == TableroJuego[i].length-1)lineaArriba+=("--------");
+	                if(j == TableroJuego[i].length)lineaArriba+=("--------");
 	                
 	                else lineaArriba+=("--------");
 	            }
@@ -112,8 +112,9 @@ public class Tablero {
 			
 	}
 	
-	//metodo para avanzar monstruos
+
 	
+
 	
 
 }

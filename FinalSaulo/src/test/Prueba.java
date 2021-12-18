@@ -1,5 +1,7 @@
 package test;
-
+import Climas.Soleado;
+import Climas.Lluvioso;
+import Climas.Nublado;
 
 import java.util.Scanner;
 
@@ -46,38 +48,33 @@ public class Prueba {
 		Plantas p2 = FabricaPlantas.construir("PlantaCarnivora");
 		Plantas p3 = FabricaPlantas.construir("PlantaCarnivora");
 		
-		try {
-			ta.agregarPlanta(p1, 1, 1);
-		} catch (ExcepcionAgregarPlanta e) {
-			// TODO Auto-generated catch block
-			System.out.println(e.getMessage());
-		}
-		try {
-			ta.agregarPlanta(p2, 1, 1);
-		} catch (ExcepcionAgregarPlanta e) {
-			// TODO Auto-generated catch block
-			System.out.println(e.getMessage());
-		}
+		/*
+		 * try { ta.agregarPlanta(p1, 1, 1); } catch (ExcepcionAgregarPlanta e) { //
+		 * TODO Auto-generated catch block System.out.println(e.getMessage()); } try {
+		 * ta.agregarPlanta(p2, 1, 1); } catch (ExcepcionAgregarPlanta e) { // TODO
+		 * Auto-generated catch block System.out.println(e.getMessage()); }
+		 */
 		
 		Monstruos m1 = FabricaMonstruos.construir("MonstruoDistancia");
 		Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
 		/* Monstruos m3 = FabricaMonstruos.construir("MonstruoCuerpo"); */
 		
+		
+	
+		
+		/*
+		 * p2.atacar(p1); p2.atacar(p1); p2.atacar(p1); p2.atacar(p1);
+		 * 
+		 * 
+		 * ta.limpiarMuertos();
+		 */
+		
+		
 
-	
-		
-		p2.atacar(p1);
-		p2.atacar(p1);
-		p2.atacar(p1);
-		p2.atacar(p1);
-	
-		
-		ta.limpiarMuertos();
-	
-		
-		
 		System.out.println("TABLERO ");
 		System.out.println("-------------------");
+		
+		
 		
 		/*
 		System.out.println(m1.getSalud());
@@ -106,6 +103,41 @@ public class Prueba {
 		
 		System.out.println(" ");
 		
+		Soleado soleado= new Soleado();
+		Nublado nublado = new Nublado();
+		Lluvioso lluvioso = new Lluvioso();
+		
+		int NRClimas = (int)(Math.random()*3+0);
+	
+		
+		
+		if (NRClimas == 0) {
+			
+			System.out.println("Jugarás en un clima soleado, preparate!");
+			
+			soleado.BajarDefensa(p1);
+			soleado.BajarDefensa(p2);
+			soleado.BajarDefensa(p3);
+		}
+		
+		else if (NRClimas == 1) {
+			
+			System.out.println("Jugarás en un clima nublado, preparate!");
+			
+			nublado.DosXTurno(m1);
+			nublado.DosXTurno(m2);
+		}
+		
+		else if (NRClimas == 2) {
+			
+			System.out.println("Jugarás en un clima lluvioso, preparate!");
+			
+			lluvioso.AgregarVidayPoder(p1);
+			lluvioso.AgregarVidayPoder(p2);
+			lluvioso.AgregarVidayPoder(p3);
+		}
+	
+		
 		System.out.println ("Qué nivel dificultad deseas? Presiona 1 para FÁCIL, 2 para NORMAL o 3 para DÍFICIL");
 		
 		int dificultad = scNumero.nextInt();
@@ -116,6 +148,9 @@ public class Prueba {
 			System.out.println("Has elegido el nivel fácil. El juego comenzar intantáneamente. Buena Suerte!");
 			
 			System.out.println(" ");
+			
+			
+		
 			
 			// Posicionar 5 monstruos a casilleros de la base
 			
@@ -129,7 +164,7 @@ public class Prueba {
 			}
 			
             
-			for (int i = 0; i < 4; i++) {
+			for (int i = 0; i < 2; i++) {
 				
 				int numeroY = (int)(Math.random()*10+0);
 				int numeroX = (int)(Math.random()*(10-6+1)+6);
@@ -140,6 +175,8 @@ public class Prueba {
 			
 			ta.pintarTablero();
 			
+		
+			
 			
 			
 		} else if (dificultad == 2){
@@ -148,7 +185,7 @@ public class Prueba {
 			
 			// Posicionar 15 monstruos
 			
-			for (int i = 0; i  < 11; i++) {
+			for (int i = 0; i  < 10; i++) {
 				
 				int numeroY = (int)(Math.random()*10+0);
 				int numeroX = (int)(Math.random()*(10-6+1)+6);
@@ -158,7 +195,7 @@ public class Prueba {
 				}
 				
 	            
-				for (int i = 0; i < 11; i++) {
+				for (int i = 0; i < 5; i++) {
 					
 					int numeroY = (int)(Math.random()*10+0);
 					int numeroX = (int)(Math.random()*(10-6+1)+6);
@@ -176,7 +213,7 @@ public class Prueba {
 			// Posicionar 30 monstruos
 		
 		
-			for (int i = 0; i  < 40; i++) {
+			for (int i = 0; i  < 20; i++) {
 				
 				int numeroY = (int)(Math.random()*10+0);
 				int numeroX = (int)(Math.random()*(10-6+1)+6);
@@ -186,7 +223,7 @@ public class Prueba {
 				}
 				
 	            
-				for (int i = 0; i < 40; i++) {
+				for (int i = 0; i < 10; i++) {
 					
 					int numeroY = (int)(Math.random()*10+0);
 					int numeroX = (int)(Math.random()*(10-6+1)+6);

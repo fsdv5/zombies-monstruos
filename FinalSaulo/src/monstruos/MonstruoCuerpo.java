@@ -13,10 +13,6 @@ public class MonstruoCuerpo extends Monstruos{
         return "MC(" + super.getSalud()+")";
     }
     
-	@Override
-	public void mover() {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }

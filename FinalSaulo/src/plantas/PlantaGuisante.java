@@ -11,8 +11,7 @@ public class PlantaGuisante extends Plantas{
         return "PGU(" + super.getSalud()+")";
     }
 
-	@Override
-	public void mover() {} // no se mueve
+
 	
 	
 	

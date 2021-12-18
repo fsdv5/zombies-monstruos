@@ -24,10 +24,10 @@ public abstract class  Plantas extends Unidades {
 		 unidad.setSalud(unidad.getSalud() - (int) (Math.random()*this.ataque + 0));
 	}
 	
+	
+	
 		
-	public abstract void mover();
-		
-	}
+}
 	
 	
 		

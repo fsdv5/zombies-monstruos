@@ -17,9 +17,7 @@ public abstract class Monstruos extends Unidades {
 	
 
 
-	
-	@Override
-	public abstract void mover();
+
 		
 	}
 

@@ -13,10 +13,7 @@ public class MonstruoDistancia extends Monstruos {
     }
 	
    
-	@Override
-	public void mover() {
-		// TODO Auto-generated method stub
 		
-	}
+	
 
 }

@@ -6,7 +6,12 @@ public class PlantaNormal extends Plantas {
 	
 	
 	public PlantaNormal(String nombre, int salud, int costeTrebol, int ataque, int defensa) {
-		super("PlantaNormal", 30, 3, 10, 5);
+		super(nombre, salud, costeTrebol, ataque, defensa);
+		this.nombre = "PlantaNormal";
+		this.salud = 30;
+		this.costeTrebol = 3;
+		this.ataque = 10;
+		this.defensa = 5;
 		
 	}
 
@@ -15,10 +20,5 @@ public class PlantaNormal extends Plantas {
         return "PN(" + super.getSalud()+")";
     }
 
-
-	@Override
-	public void mover() {} // no se mueve
-	
-	
 
 }

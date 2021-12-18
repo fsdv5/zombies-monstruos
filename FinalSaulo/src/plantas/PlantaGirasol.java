@@ -12,8 +12,7 @@ public class PlantaGirasol extends Plantas{
         return "PGI(" + super.getSalud()+")";
     }
 
-	@Override
-	public void mover() {} // no se mueve
+
 	
 	
 	
