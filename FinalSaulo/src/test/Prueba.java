@@ -32,7 +32,7 @@ public class Prueba {
 		
 		int opcion = 0;
 		
-		do {
+		//do {
 			
 					System.out.println("\t\t\tBienvenido al juego de Plantas vs. Monstruos");
 					
@@ -47,6 +47,16 @@ public class Prueba {
 					
 					System.out.println("Que planta desea agregar? tiene disponible:" + us.getRecursos());
 
+					
+		
+					for (int i=0; i < 20; i++) {
+						
+						int x = (int) (Math.random() * (11 - 5) + 5);
+						System.out.println(x);
+						
+						
+					}
+		
 					
 		Tablero ta = new Tablero();
 		
@@ -66,8 +76,15 @@ public class Prueba {
 		Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
 		Monstruos m3 = FabricaMonstruos.construir("MonstruoCuerpo"); 
 		
-		
 	
+		ta.agregarMonstruo(m1);
+		ta.pintarTablero();
+		ta.moverMonstruo();
+		ta.pintarTablero();
+		ta.moverMonstruo();
+		ta.pintarTablero();
+		
+		
 		
 		/*
 		 * p2.atacar(p1); p2.atacar(p1); p2.atacar(p1); p2.atacar(p1);
@@ -78,10 +95,12 @@ public class Prueba {
 		
 		
 
-		System.out.println("TABLERO ");
-		System.out.println("-------------------");
+	//	System.out.println("TABLERO ");
+		//System.out.println("-------------------");
 		
 		
+	}
+}
 		
 		/*
 		System.out.println(m1.getSalud());
@@ -103,7 +122,7 @@ public class Prueba {
 		
 		ta.retornarOcupados(4,0);
 	
-		*/
+		
 		System.out.println(" ");
 		
 		ta.pintarTablero();
@@ -116,7 +135,7 @@ public class Prueba {
 		
 		int NRClimas = (int)(Math.random()*3+0);
 	
-		
+		/*
 		
 		if (NRClimas == 0) {
 			
@@ -293,7 +312,7 @@ public class Prueba {
 		
 		// clima singleton 
 	
-		
+		/*
     }else {
 		
 		System.out.println("Error al selecionar el nivel. Fin del juego");
@@ -319,5 +338,6 @@ System.out.println("Gracias por jugar");
 		// TODO Auto-generated method stub
 		return 0;
 	}
-}
+	*/
+
 

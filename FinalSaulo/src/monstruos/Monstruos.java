@@ -8,6 +8,7 @@ public abstract class Monstruos extends Unidades {
 	protected int velocidad;
 	/** Atributo que fija los ataques por segundo del monstruo por cada turno de partida*/
 	protected int ataquexsegundoZ;
+
 	
 	public Monstruos(String nombre, int salud, int ataque, int defensa,int contador) {
 		super(nombre, salud, ataque, defensa,contador);
@@ -35,6 +36,12 @@ public abstract class Monstruos extends Unidades {
 	public void setAtaquexsegundoZ(int ataquexsegundoZ) {
 		this.ataquexsegundoZ = ataquexsegundoZ;
 	}
+
+
+
+
+	
+	
 	
 
 }

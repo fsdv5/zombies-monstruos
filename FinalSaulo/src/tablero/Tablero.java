@@ -4,6 +4,7 @@ import monstruos.Monstruos;
 import plantas.Plantas;
 import unidades.Unidades;
 
+
 public class Tablero {
 	
 	private Unidades[][] TableroJuego = new Unidades[11][11];
@@ -50,9 +51,30 @@ public class Tablero {
 	    }
 
 	   
-	public void agregarMonstruo(Monstruos monstruo, int y, int x) {
+	public void agregarMonstruo(Monstruos monstruo) {
+		
+				
+		int y = (int)(Math.random()*7+0);
+		
+		int x = (int) (Math.random() * (11 - 5) + 5);
 		
 		TableroJuego[y][x] = monstruo;
+	}
+	
+	public void moverMonstruo() {
+		
+		for(int i=0; i<TableroJuego.length; i++) {
+			for(int j=0; j<TableroJuego.length; j++) {
+				
+		if(TableroJuego[i][j]!=null && TableroJuego[i][j] instanceof Monstruos && j > 1) { // > 1 = afuera base
+		
+						
+			TableroJuego[i][j-1] = TableroJuego[i][j];
+			TableroJuego[i][j] = null;
+		}
+			}
+		}
+		
 	}
 	
 

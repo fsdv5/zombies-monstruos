@@ -12,7 +12,9 @@ public class testMecanica {
 		
 		m.seleccionUsuario();
 		
-		m.empezarJuego();
+		m.menuSeleccion();
+		//Excepcion de recursos
+		//
 		
 		
 	}

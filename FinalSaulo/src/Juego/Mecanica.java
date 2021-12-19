@@ -35,6 +35,7 @@ public class Mecanica {
 	}
 	
 	public void menuSeleccion() {
+		
 		System.out.println("-------------------------------------------------------------");
 		System.out.println("\t Es momento de posicionar sus plantas en el tablero");
 		System.out.println("");
@@ -44,7 +45,7 @@ public class Mecanica {
 		System.out.println("[2] -> Planta Girasol; Caractersticas: Coste de Trebol 3, Vida 30, Ataque 2, Defensa 5, Permite obtener un trebol cada 4 turnos");
 		System.out.println("[3] -> Planta Carnivora; Caractersticas: Coste de Trebol 6, Vida 50, Mata a un enemigo cada 4 turnos, Defensa 9");
 		System.out.println("[4] -> Planta Guisante; Caractersticas: Coste de Trebol 4, Vida 35, Ataque 3, Defensa 8, Puede atacar a distancia");
-		System.out.println("[5] -> COMENZAR JUEGO");
+		System.out.println("[5] -> COMENZAR TURNO");
 		
 		System.out.println("-------------------------------------------------------------");
 	
@@ -122,8 +123,10 @@ public class Mecanica {
 			break;
 			
 		case 5:
-			System.out.println("El juego comenzara a continuacion.");
+			System.out.println("Empieza el turno.");
 			ta.pintarTablero();
+			ta.moverMonstruo();
+			//Tenemos que hacer algun metodo que ya marque el tablero y empiece a llamar los monstruos para que avancen.
 			break;
 		
 		default:
@@ -132,6 +135,7 @@ public class Mecanica {
 			
 		} 
 	
+		
 		
 	
 		
