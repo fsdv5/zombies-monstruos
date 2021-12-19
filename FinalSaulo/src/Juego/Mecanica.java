@@ -34,7 +34,7 @@ public class Mecanica {
 
 	}
 	
-	public void empezarJuego() {
+	public void menuSeleccion() {
 		System.out.println("-------------------------------------------------------------");
 		System.out.println("\t Es momento de posicionar sus plantas en el tablero");
 		System.out.println("");
@@ -51,7 +51,7 @@ public class Mecanica {
 		
 		
 		
-		System.out.println("Que planta desea agregar? Usted cuenta con los siguientes recursos: " + jugador.getRecursos());
+		System.out.println("Que planta desea agregar? \nUsted cuenta con los siguientes recursos: " + jugador.getRecursos());
 		
 		int eleccionPlanta = sc.nextInt();
 		
@@ -70,7 +70,7 @@ public class Mecanica {
 				System.out.println(e.getMessage());
 			}
 			
-			posicionarPlanta();
+			menuSeleccion();
 			break;
 			
 	
@@ -88,7 +88,7 @@ public class Mecanica {
 				System.out.println(e.getMessage());
 			}
 			
-			posicionarPlanta();
+			menuSeleccion();
 			break;
 		
 		case 3: 
@@ -103,7 +103,7 @@ public class Mecanica {
 			}catch(ExcepcionAgregarPlanta e) {
 				System.out.println(e.getMessage());
 			}
-			posicionarPlanta();
+			menuSeleccion();
 			break;
 	
 		case 4:
@@ -118,7 +118,7 @@ public class Mecanica {
 			}catch(ExcepcionAgregarPlanta e) {
 				System.out.println(e.getMessage());
 			}
-			posicionarPlanta();
+			menuSeleccion();
 			break;
 			
 		case 5:
@@ -128,7 +128,7 @@ public class Mecanica {
 		
 		default:
 			System.out.println("No existe la opción seleccionada. Por favor elija correctamente.");
-			posicionarPlanta();
+			menuSeleccion();
 			
 		} 
 	
