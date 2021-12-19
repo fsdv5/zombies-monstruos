@@ -20,7 +20,7 @@ public class Prueba {
 
 
 
-	
+	/*
 	
 	public static void main(String[] args) {
 		
@@ -28,11 +28,11 @@ public class Prueba {
 			
 	      Scanner scNumero = new Scanner(System.in);
 	      
-	      Usuario us = new Usuario("Facundo");
+	   
 		
 		int opcion = 0;
 		
-		//do {
+	do {
 			
 					System.out.println("\t\t\tBienvenido al juego de Plantas vs. Monstruos");
 					
@@ -45,7 +45,7 @@ public class Prueba {
 					
 					System.out.println(" ");
 					
-					System.out.println("Que planta desea agregar? tiene disponible:" + us.getRecursos());
+				//	System.out.println("Que planta desea agregar? tiene disponible:" + us.getRecursos());
 
 					
 		
@@ -56,7 +56,7 @@ public class Prueba {
 						
 						
 					}
-		
+					
 					
 		Tablero ta = new Tablero();
 		
@@ -65,12 +65,12 @@ public class Prueba {
 		Plantas p2 = FabricaPlantas.construir("PlantaCarnivora");
 		Plantas p3 = FabricaPlantas.construir("PlantaCarnivora");
 		
-		/*
+		
 		 * try { ta.agregarPlanta(p1, 1, 1); } catch (ExcepcionAgregarPlanta e) { //
 		 * TODO Auto-generated catch block System.out.println(e.getMessage()); } try {
 		 * ta.agregarPlanta(p2, 1, 1); } catch (ExcepcionAgregarPlanta e) { // TODO
 		 * Auto-generated catch block System.out.println(e.getMessage()); }
-		 */
+		
 		
 		Monstruos m1 = FabricaMonstruos.construir("MonstruoDistancia");
 		Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
@@ -91,9 +91,9 @@ public class Prueba {
 		 * 
 		 * 
 		 * ta.limpiarMuertos();
-		 */
+		 
 		
-		
+					 */
 
 	//	System.out.println("TABLERO ");
 		//System.out.println("-------------------");

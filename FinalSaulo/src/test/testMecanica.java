@@ -1,7 +1,7 @@
 package test;
 
 import Juego.Mecanica;
-import tablero.Tablero;
+
 
 public class testMecanica {
 	

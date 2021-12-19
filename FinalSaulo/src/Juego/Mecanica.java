@@ -4,7 +4,6 @@ import monstruos.*;
 import plantas.*;
 import recursos.*;
 import tablero.*;
-import test.*;
 import unidades.*;
 import Usuario.*;
 import java.util.Scanner;
@@ -12,7 +11,8 @@ import java.util.Scanner;
 public class Mecanica {
 	
 	Scanner sc = new Scanner(System.in);
-	Usuario jugador = new Usuario(" ");
+	//Usuario jugador = new Usuario();
+	Recursos recursos = new Recursos();
 	int posicionY;
 	int posicionX;
 	Tablero ta = new Tablero();
@@ -24,11 +24,11 @@ public class Mecanica {
 		System.out.println("-------------------------------------------------------------");
 		System.out.println("\tPor favor, ingrese su nombre de usuario: ");
 		String usuario = sc.nextLine();
-		jugador.setNombreUsuario(usuario);
+		
 		
 		System.out.println("-------------------------------------------------------------");
-		System.out.println("\tPreparate para comenzar, " + jugador.getNombreUsuario() + ". ");
-		System.out.println("RECURSOS DISPONIBLES: " + jugador.getRecursos());
+		System.out.println("\tPreparate para comenzar, " + usuario + ". ");
+		System.out.println("RECURSOS DISPONIBLES: " + "Trebol: " + recursos.getTrebol() + ", Agua: " +  recursos.getAgua());
 		System.out.println("-------------------------------------------------------------");
 		
 
@@ -52,7 +52,7 @@ public class Mecanica {
 		
 		
 		
-		System.out.println("Que planta desea agregar? \nUsted cuenta con los siguientes recursos: " + jugador.getRecursos());
+		System.out.println("Que planta desea agregar? \nUsted cuenta con los siguientes recursos: " + "Trebol: " + recursos.getTrebol() + ", Agua: " +  recursos.getAgua());
 		
 		int eleccionPlanta = sc.nextInt();
 		
@@ -66,7 +66,7 @@ public class Mecanica {
 			planta = FabricaPlantas.construir("PlantaNormal");
 			try {
 			ta.agregarPlanta(planta, posicionY, posicionX);
-			jugador.getRecursos().setTrebol(jugador.getRecursos().getTrebol() - planta.getCosteTrebol());
+			recursos.setTrebol(recursos.getTrebol()-planta.getCosteTrebol());			
 			}catch(ExcepcionAgregarPlanta e) {
 				System.out.println(e.getMessage());
 			}
@@ -84,7 +84,7 @@ public class Mecanica {
 			planta = FabricaPlantas.construir("PlantaGirasol");
 			try {
 			ta.agregarPlanta(planta, posicionY, posicionX);
-			jugador.getRecursos().setTrebol(jugador.getRecursos().getTrebol() - planta.getCosteTrebol());
+			recursos.setTrebol(recursos.getTrebol()-planta.getCosteTrebol());
 			}catch(ExcepcionAgregarPlanta e) {
 				System.out.println(e.getMessage());
 			}
@@ -100,7 +100,7 @@ public class Mecanica {
 			planta = FabricaPlantas.construir("PlantaCarnivora");
 			try {
 			ta.agregarPlanta(planta, posicionY, posicionX);
-			jugador.getRecursos().setTrebol(jugador.getRecursos().getTrebol() - planta.getCosteTrebol());
+			recursos.setTrebol(recursos.getTrebol()-planta.getCosteTrebol());
 			}catch(ExcepcionAgregarPlanta e) {
 				System.out.println(e.getMessage());
 			}
@@ -115,7 +115,7 @@ public class Mecanica {
 			planta = FabricaPlantas.construir("PlantaGuisante");
 			try {
 			ta.agregarPlanta(planta, posicionY, posicionX);
-			jugador.getRecursos().setTrebol(jugador.getRecursos().getTrebol() - planta.getCosteTrebol());
+			recursos.setTrebol(recursos.getTrebol()-planta.getCosteTrebol());
 			}catch(ExcepcionAgregarPlanta e) {
 				System.out.println(e.getMessage());
 			}

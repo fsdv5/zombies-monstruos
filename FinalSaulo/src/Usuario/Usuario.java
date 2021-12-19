@@ -8,15 +8,8 @@ public class Usuario {
 	private String nombreUsuario;
 	private Recursos recursos = new Recursos();
 	
+	public Usuario() {};
 	
-	
-	public Usuario(String usuario) {
-		
-		this.nombreUsuario = usuario;
-		
-		
-	}
-
 
 	public String getNombreUsuario() {
 		return nombreUsuario;

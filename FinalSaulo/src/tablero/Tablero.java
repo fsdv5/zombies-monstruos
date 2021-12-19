@@ -1,5 +1,6 @@
 package tablero;
 
+import Usuario.Usuario;
 import monstruos.Monstruos;
 import plantas.Plantas;
 import unidades.Unidades;
@@ -8,7 +9,7 @@ import unidades.Unidades;
 public class Tablero {
 	
 	private Unidades[][] TableroJuego = new Unidades[11][11];
-	
+	Usuario us = new Usuario();
 	
 	
 		
@@ -80,12 +81,21 @@ public class Tablero {
 
 	public void agregarPlanta(Plantas planta, int y, int x) throws ExcepcionAgregarPlanta {
 		
+
+		
 		if(TableroJuego[y][x] == null) {
 			
+			if(us.getRecursos().getTrebol() > planta.getCosteTrebol()) {
+			
 			TableroJuego[y][x] = planta;
+			us.getRecursos().setTrebol(us.getRecursos().getTrebol() - planta.getCosteTrebol());
 			System.out.println("-------------------------------------------------------------");
 			System.out.println("Planta agregada correctamente. Posicion del tablero: " + y + ", " + x);
 			System.out.println("-------------------------------------------------------------");
+			} else {
+				
+				throw new ExcepcionAgregarPlanta("No tenes suficientes recursos");
+			}
 		} else {
 			System.out.println("-------------------------------------------------------------");
 			throw new ExcepcionAgregarPlanta("\tLa posicion se encuentra ocupada. La proxima elegí bien");
