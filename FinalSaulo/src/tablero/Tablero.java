@@ -1,6 +1,8 @@
 package tablero;
 
 import Usuario.Usuario;
+import monstruos.MonstruoCuerpo;
+import monstruos.MonstruoDistancia;
 import monstruos.Monstruos;
 import plantas.Plantas;
 import unidades.Unidades;
@@ -105,9 +107,40 @@ public class Tablero {
 	
 			
 		
-				
+	public void buscarPelea() {
 		
-			
+		for(int i=0; i<TableroJuego.length; i++) {
+			for(int j=0; j<TableroJuego.length; j++) {
+				
+				if(TableroJuego[i][j] instanceof Plantas) {
+				
+					if(TableroJuego[i][j+1] instanceof Monstruos) {
+						
+						TableroJuego[i][j].atacar(TableroJuego[i][j+1]);
+						
+					} else {}
+					
+				} else if(TableroJuego[i][j] instanceof Monstruos){
+					
+					if(TableroJuego[i][j] instanceof MonstruoDistancia) {
+						
+						TableroJuego[i][j].atacar(TableroJuego[i][j-2]);
+						
+					} else {
+						System.out.println(TableroJuego[i][j].getNombre() + "No tiene unidades para atacar");
+					} } else if (TableroJuego[i][j] instanceof MonstruoCuerpo) {
+						TableroJuego[i][j].atacar(TableroJuego[i][j-1]);												
+					} else {
+						System.out.println("que pasa");
+					}
+					
+				}
+				
+				}
+				
+			}
+		
+	
 	
 	
 	//Limpieza de unidades muertas
