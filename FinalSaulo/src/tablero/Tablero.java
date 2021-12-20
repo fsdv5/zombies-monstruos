@@ -64,6 +64,7 @@ public class Tablero {
 		TableroJuego[y][x] = monstruo;
 	}
 	
+	
 	public void moverMonstruo() {
 		
 		for(int i=0; i<TableroJuego.length; i++) {
@@ -106,7 +107,7 @@ public class Tablero {
 	}
 	
 			
-		
+
 	public void buscarPelea() {
 		
 		for(int i=0; i<TableroJuego.length; i++) {

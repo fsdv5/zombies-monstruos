@@ -1,22 +1,16 @@
-package test;
-
-import Climas.Soleado;
-import Climas.Lluvioso;
-import Climas.Nublado;
-
-
-import java.util.Scanner;
-import Usuario.Usuario;
-import monstruos.*;
-import plantas.*;
-import tablero.ExcepcionAgregarPlanta;
-import tablero.Tablero;
-import unidades.Unidades;
-import Climas.Soleado;
-import Climas.Lluvioso;
-import Climas.Nublado;
-
-public class Prueba {
+/*
+ * package test;
+ * 
+ * import Climas.Soleado; import Climas.Lluvioso; import Climas.Nublado;
+ * 
+ * 
+ * import java.util.Scanner; import Usuario.Usuario; import monstruos.*; import
+ * plantas.*; import tablero.ExcepcionAgregarPlanta; import tablero.Tablero;
+ * import unidades.Unidades; import Climas.Soleado; import Climas.Lluvioso;
+ * import Climas.Nublado;
+ * 
+ * public class Prueba {
+ */
 
 
 
@@ -99,8 +93,7 @@ public class Prueba {
 		//System.out.println("-------------------");
 		
 		
-	}
-}
+	
 		
 		/*
 		System.out.println(m1.getSalud());
