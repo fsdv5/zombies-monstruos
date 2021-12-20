@@ -185,7 +185,7 @@ public class Mecanica {
 			
 			
 			
-			if(dificultad == 1) {
+		if(dificultad == 1) {
 				
 				// Posicionar 5 monstruos a casilleros de la base
 				
@@ -209,7 +209,7 @@ public class Mecanica {
 						
 						} 
 									    
-				} 
+				
 						
 						
 			            System.out.println("Fin del juego. Gracias por jugar!");
@@ -217,26 +217,26 @@ public class Mecanica {
 			            break;
 					
 						
-				}else if (NRClimas != 1) {
+				 }else if (NRClimas != 1) {
 					
-				for (int i = 0; i < 2; i++) {
+					 for (int i = 0; i < 2; i++) {
 			    
-			    ta.agregarMonstruo(m1);
-				
-                ta.moverMonstruo();
-				
-			    ta.pintarTablero();
-				
-			
-				ta.agregarMonstruo(m2);
-				
-				ta.moverMonstruo();
+					    ta.agregarMonstruo(m1);
+						
+		                ta.moverMonstruo();
+						
+					    ta.pintarTablero();
+						
 					
-				ta.pintarTablero();
+						ta.agregarMonstruo(m2);
+				
+						ta.moverMonstruo();
+							
+						ta.pintarTablero();
 							    
 			
 				
-				}
+					 	}
 				
 				
 	            System.out.println("Fin del juego. Gracias por jugar!");
@@ -246,7 +246,7 @@ public class Mecanica {
 				
 			    
 				
-			} else if (dificultad == 2){
+		} else if (dificultad == 2){
 				
 				System.out.println("Has elegido el nivel medio. El juego comenzar intantáneamente. Buena Suerte!");
 				
@@ -271,9 +271,10 @@ public class Mecanica {
 			            System.out.println("Fin del juego. Gracias por jugar!");
 			            
 			            break;
-					
+                   } 
+                   
 						
-				}else if (NRClimas != 1) {
+		}else if (NRClimas != 1) {
 					
 				
 				for (int i = 0; i < 7; i++) {
@@ -302,7 +303,7 @@ public class Mecanica {
 		            
 				}
 				
-			} else if (dificultad == 3){
+		} else if (dificultad == 3){
 				
 				System.out.println("Has elegido el nivel díficil. El juego comenzar intantáneamente. Buena Suerte!");
 				
@@ -362,19 +363,11 @@ public class Mecanica {
 			
 			
 			
-			/*
-			 * boolean monstruo = true, planta = true;
-			 * 
-			 * do {
-			 * 
-			 * ta.buscarPelea();
-			 * 
-			 * }while (monstruo && planta);
-			 */
+	
 			
 			
 			
-			break;
+			
 			
 			
 		case 6:
