@@ -51,7 +51,7 @@ public class Mecanica {
 	
 	public void seleccionDificultad() {
 		
-		System.out.println ("Que nivel dificultad deseas? Presiona 1 para FACIL, 2 para NORMAL o 3 para DFICIL");
+		System.out.println ("Que nivel dificultad deseas? Presiona 1 para FACIL, 2 para NORMAL o 3 para DIFICIL");
 		
 		int dificultad = sc.nextInt();
 
@@ -103,7 +103,8 @@ public class Mecanica {
 		System.out.println("[3] -> Planta Carnivora; Caractersticas: Coste de Trebol 6, Vida 50, Mata a un enemigo cada 4 turnos, Defensa 9");
 		System.out.println("[4] -> Planta Guisante; Caractersticas: Coste de Trebol 4, Vida 35, Ataque 3, Defensa 8, Puede atacar a distancia");
 		System.out.println("[5] -> COMENZAR TURNO");
-		System.out.println("[6] -> SALIR");
+		System.out.println("[6] -> Usar unidades de agua");
+		System.out.println("[7] -> SALIR");
 		
 		System.out.println("-------------------------------------------------------------");
 	
@@ -113,7 +114,7 @@ public class Mecanica {
 		System.out.println("Que planta desea agregar? \nUsted cuenta con los siguientes recursos: " + "Trebol: " + recursos.getTrebol() + ", Agua: " +  recursos.getAgua());
 		
 		int eleccionPlanta = sc.nextInt();
-		if(ta.buscarGanador()) {eleccionPlanta=6;}
+		if(ta.buscarGanador()) {eleccionPlanta=7;}
 		switch(eleccionPlanta) {
 		
 		case 1: 
@@ -199,10 +200,23 @@ public class Mecanica {
 			
 		case 6:
 			
+			   System.out.println("Ingrese la posición de la planta a la que quieres agregarle las unidades de agua");
+	            posicionY = sc.nextInt();
+	            posicionX = sc.nextInt();
+
+	            ta.PlantasAgua(posicionY, posicionX);
+
+	            recursos.setAgua(recursos.getAgua() - 2);
+	            menuSeleccion();
+	            
+	            
+	            break;
+	
+			
+			
+		case 7 : 	
 			System.out.println("Gracias por jugar! Hasta pronto");
-			
 			break;
-			
 			
 		default:
 			System.out.println("No existe la opción seleccionada. Por favor elija correctamente.");

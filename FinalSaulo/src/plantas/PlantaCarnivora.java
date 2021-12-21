@@ -18,6 +18,7 @@ public void atacar(Unidades unidad) {
 		if(contadorAtaques == 0) {
 		
 		 unidad.setSalud(unidad.getSalud() - this.ataque);
+		 System.out.println("La planta Carnivora se comió un enemigo.");
 		 contadorAtaques=4;
 		}
 		 contadorAtaques--;

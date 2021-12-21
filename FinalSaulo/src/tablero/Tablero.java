@@ -12,12 +12,28 @@ import unidades.Unidades;
 public class Tablero {
 
 	int contadorMonstruos = 0;
+	int random = (int) (Math.random()*10 + 0);
 	
 	
 	private Unidades[][] TableroJuego = new Unidades[11][11];
 	Usuario us = new Usuario();
 	
 	
+	
+
+	public void PlantasAgua(int i, int j) {
+
+
+	                if (TableroJuego[i][j] != null && TableroJuego[i][j] instanceof Plantas) {
+
+	                    TableroJuego[i][j].setSalud(TableroJuego[i][j].getSalud() + random);
+
+	                }else {
+
+	                    System.out.println("Error! No hay ninguna planta en el tablero");
+	                }
+
+	            }
 	
  
 		
@@ -202,7 +218,7 @@ public class Tablero {
                   {
                 	for (int k = 0; k < TableroJuego.length; k++)
                     {                            
-                		if (TableroJuego[i][k] instanceof Plantas);
+                		if (TableroJuego[i][j-1] instanceof Plantas);
                 		{
                 	                		
                 			TableroJuego[i][j].atacar(TableroJuego[i][j-1]);
