@@ -202,10 +202,10 @@ public class Tablero {
                   {
                 	for (int k = 0; k < TableroJuego.length; k++)
                     {                            
-                		if (TableroJuego[i][k] instanceof Plantas);
+                		if (TableroJuego[i][j-1] instanceof Plantas);
                 		{
                 	                		
-                			TableroJuego[i][j].atacar(TableroJuego[i][j-1]);
+                			TableroJuego[i][j].atacar(TableroJuego[i-1][j]);
                         } 
                 		}
                 		}
