@@ -5,6 +5,7 @@ import monstruos.FabricaMonstruos;
 import monstruos.MonstruoCuerpo;
 import monstruos.MonstruoDistancia;
 import monstruos.Monstruos;
+import plantas.PlantaGirasol;
 import plantas.Plantas;
 import unidades.Unidades;
 
@@ -35,8 +36,8 @@ public class Tablero {
 
 	            }
 	
- 
-		
+	
+	
 	
 	public void pintarTablero(){
 	        

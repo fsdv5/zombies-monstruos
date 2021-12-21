@@ -1,18 +1,19 @@
 package Climas;
-
-import monstruos.Monstruos;
-import unidades.Unidades;
+import monstruos.*;
+import tablero.*;
 
 public class Nublado {
-	
-	public void DosXTurno(Unidades unidad){
-		
-	// Caen dos monstruos por turno
-		
-		if (unidad instanceof Monstruos) {
-			
-			
-		}
 
-}
+    Monstruos m1 = FabricaMonstruos.construir("MonstruoDistancia");
+    Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
+
+    Tablero ta = new Tablero();
+
+    public void DosMxTurno(){
+
+        System.out.println("Jugaras con un clima nublado! Preparate! Caeran dos monstruos por turno");
+
+
+
+    }
 }

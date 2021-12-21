@@ -20,17 +20,8 @@ public class Mecanica {
 	Monstruos monstruo;
 	Soleado soleado = new Soleado();
 	Lluvioso lluvioso = new Lluvioso();
-	
-	
-	Plantas p1 = FabricaPlantas.construir("PlantaNormal");
-	Plantas p2 = FabricaPlantas.construir("PlantaCarnivora");
-	Plantas p3 = FabricaPlantas.construir("PlantaCarnivora");
-	
-	Monstruos m1 = FabricaMonstruos.construir("MonstruoDistancia");
-	Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
-	Monstruos m3 = FabricaMonstruos.construir("MonstruoCuerpo"); 
-	
-	
+	Nublado nublado = new Nublado();
+	int NRClimas = (int) (Math.random()*3 + 0);
 		
 	
 	public void seleccionUsuario() {
@@ -183,18 +174,40 @@ public class Mecanica {
 			
 		case 5:
 			
-			
-			if(ta.getContadorMonstruos() > 0) {
-			ta.agregarMonstruo(ta.monstruoRandom());
-			}
-			ta.pintarTablero();
-			ta.moverMonstruo();
-			ta.buscarPelea();
-			ta.limpiarMuertos();
-		if(ta.buscarGanador()==false) {
-			menuSeleccion();
-		}
-			break;
+			   if(NRClimas == 0) {
+
+	                soleado.BajarDefensa(planta);
+
+	            }else if(NRClimas == 1) {
+
+	                lluvioso.AgregarAguayPoder(planta);
+
+	                do {
+	                recursos.setAgua(recursos.getAgua() + 2);
+	                }while(recursos.getAgua() < 4);
+
+	            }else if(NRClimas == 2) {
+
+	                nublado.DosMxTurno();
+	            }
+
+	            if(ta.getContadorMonstruos() > 0) {
+	                if(NRClimas == 2) {
+	                    ta.agregarMonstruo(ta.monstruoRandom());
+	                    ta.agregarMonstruo(ta.monstruoRandom());
+	                }else {
+	            ta.agregarMonstruo(ta.monstruoRandom());
+	            }
+	            ta.pintarTablero();
+	            ta.moverMonstruo();
+	            ta.buscarPelea();
+	            ta.limpiarMuertos();
+	        if(ta.buscarGanador()==false) {
+	            menuSeleccion();
+
+	        }
+	        }
+	            break;
 			
 			
 			
