@@ -7,19 +7,8 @@ public abstract class  Plantas extends Unidades {
 	
 	/** Atributo que controla el ataque por segundo de cada planta*/
 	
-	protected int ataquexsegundo;
 	
 
-	public int getAtaquexsegundo() {
-		return ataquexsegundo;
-	}
-
-
-
-
-	public void setAtaquexsegundo(int ataquexsegundo) {
-		this.ataquexsegundo = ataquexsegundo;
-	}
 
 
 

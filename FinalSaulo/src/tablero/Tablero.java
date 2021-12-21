@@ -1,6 +1,7 @@
 package tablero;
 
 import Usuario.Usuario;
+import monstruos.FabricaMonstruos;
 import monstruos.MonstruoCuerpo;
 import monstruos.MonstruoDistancia;
 import monstruos.Monstruos;
@@ -9,14 +10,19 @@ import unidades.Unidades;
 
 
 public class Tablero {
+
+	int contadorMonstruos = 0;
+	
 	
 	private Unidades[][] TableroJuego = new Unidades[11][11];
 	Usuario us = new Usuario();
 	
 	
+	
+ 
 		
 	
-	   public void pintarTablero(){
+	public void pintarTablero(){
 	        
 		   System.out.println("   " + "BASE");
 	        String lineaFinal = "";
@@ -54,39 +60,84 @@ public class Tablero {
 	    }
 
 	   
+	   
 	public void agregarMonstruo(Monstruos monstruo) {
 		
 				
-		int y = (int)(Math.random()*7+0);
+		int y = (int)(Math.random()*8+0);
 		
-		int x = (int) (Math.random() * (11 - 5) + 5);
+		int x = (int) (Math.random() * (11 - 6) + 6);
 		
 		TableroJuego[y][x] = monstruo;
+		contadorMonstruos--;
 	}
+	
+	
+	public Monstruos monstruoRandom() {
+		
+		int y = (int)(Math.random()*3+0);
+
+		if(y < 2) {
+			
+			return FabricaMonstruos.construir("MonstruoCuerpo");
+			
+		} else {
+			
+			return FabricaMonstruos.construir("MonstruoDistancia");
+		}
+		
+
+		
+	}
+	
+	
+	public boolean buscarGanador() {
+		
+		for(int i=0; i < TableroJuego.length; i++) {
+					
+		if(TableroJuego[i][0] instanceof Monstruos ) {
+
+            System.out.println("GANAN LOS MONSTRUOS");
+            return true;
+        
+            }
+	}
+		
+		return false;
+		} 
 	
 	
 	public void moverMonstruo() {
 		
+		
 		for(int i=0; i<TableroJuego.length; i++) {
-			for(int j=0; j<TableroJuego.length; j++) {
-				
-		if(TableroJuego[i][j]!=null && TableroJuego[i][j] instanceof Monstruos && j > 1) { // > 1 = afuera base
-		
-						
-			TableroJuego[i][j-1] = TableroJuego[i][j];
-			TableroJuego[i][j] = null;
-		}
-			}
-		}
-		
-	}
+			for(int j=0; j<TableroJuego.length; j++) {				
 	
+				
+		if(TableroJuego[i][j]!=null && TableroJuego[i][j] instanceof Monstruos && j > 0) { // > 0 = afuera base
+			
+			if(TableroJuego[i][j-1] == null) {
+				
+				TableroJuego[i][j-1] = TableroJuego[i][j];
+				TableroJuego[i][j] = null;
+							
+			}
+			
+		} else if(TableroJuego[i][j] instanceof Monstruos && j == 0) {
+			buscarGanador();
+			System.out.println("GANAN LOS MONSTRUOS");
+			
+			} else {}
+		}
+	}
+	}
+
 
 	public void agregarPlanta(Plantas planta, int y, int x) throws ExcepcionAgregarPlanta {
 		
 
 		
-		if(TableroJuego[y][x] == null) {
+		if(TableroJuego[y][x] == null && x<5) {
 			
 			if(us.getRecursos().getTrebol() > planta.getCosteTrebol()) {
 			
@@ -101,7 +152,7 @@ public class Tablero {
 			}
 		} else {
 			System.out.println("-------------------------------------------------------------");
-			throw new ExcepcionAgregarPlanta("\tLa posicion se encuentra ocupada. La proxima elegí bien");
+			throw new ExcepcionAgregarPlanta("\t Posicion invalida. La proxima elegí bien");
 			
 	}
 	}
@@ -109,38 +160,57 @@ public class Tablero {
 			
 
 	public void buscarPelea() {
-		
-		for(int i=0; i<TableroJuego.length; i++) {
-			for(int j=0; j<TableroJuego.length; j++) {
-				
-				if(TableroJuego[i][j] instanceof Plantas) {
-				
-					if(TableroJuego[i][j+1] instanceof Monstruos) {
-						
-						TableroJuego[i][j].atacar(TableroJuego[i][j+1]);
-						
-					} else {}
-					
-				} else if(TableroJuego[i][j] instanceof Monstruos){
-					
-					if(TableroJuego[i][j] instanceof MonstruoDistancia) {
-						
-						TableroJuego[i][j].atacar(TableroJuego[i][j-2]);
-						
-					} else {
-						System.out.println(TableroJuego[i][j].getNombre() + "No tiene unidades para atacar");
-					} } else if (TableroJuego[i][j] instanceof MonstruoCuerpo) {
-						TableroJuego[i][j].atacar(TableroJuego[i][j-1]);												
-					} else {
-						System.out.println("que pasa");
-					}
-					
-				}
-				
-				}
-				
-			}
-		
+
+        for(int i=0; i<TableroJuego.length; i++) {
+            for(int j=0; j<TableroJuego.length; j++) {
+
+                if(TableroJuego[i][j] instanceof Plantas) 
+                        {
+                        
+                            for (int k = 0; k < TableroJuego.length; k++) 
+                            { 
+                                if (TableroJuego[i][k] instanceof Monstruos) 
+                                    {
+                                        TableroJuego[i][j].atacar(TableroJuego[i][k]);
+                                       
+                                    }
+                            }
+
+                        } 
+
+                else {}
+                    if(TableroJuego[i][j] instanceof Monstruos){
+
+                    if(TableroJuego[i][j] instanceof MonstruoDistancia) 
+                        {
+                            for (int k = 0; k < TableroJuego.length; k++)
+                            {
+                                if (TableroJuego[i][k] instanceof Plantas) 
+                                {
+                                    TableroJuego[i][j].atacar(TableroJuego[i][k]);
+                                  
+                                }
+                            }
+
+                        }
+                    else 
+                        {
+                           
+                        } 
+
+                } else if (TableroJuego[i][j] instanceof MonstruoCuerpo) 
+                        {
+                            TableroJuego[i][j].atacar(TableroJuego[i][j-1]);
+                        } 
+                        else 
+                            {
+                         
+                            }
+                        }
+
+                    }
+
+                }
 	
 	
 	
@@ -181,7 +251,22 @@ public class Tablero {
 
 			
 	}
-	
+
+
+
+	public int getContadorMonstruos() {
+		return contadorMonstruos;
+	}
+
+
+
+	public void setContadorMonstruos(int contadorMonstruos) {
+		this.contadorMonstruos = contadorMonstruos;
+	}
+
+
+
+
 
 	
 

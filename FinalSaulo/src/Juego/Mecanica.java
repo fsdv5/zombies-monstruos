@@ -18,6 +18,9 @@ public class Mecanica {
 	Tablero ta = new Tablero();
 	Plantas planta;
 	Monstruos monstruo;
+	Soleado soleado = new Soleado();
+	Lluvioso lluvioso = new Lluvioso();
+	
 	
 	Plantas p1 = FabricaPlantas.construir("PlantaNormal");
 	Plantas p2 = FabricaPlantas.construir("PlantaCarnivora");
@@ -26,6 +29,9 @@ public class Mecanica {
 	Monstruos m1 = FabricaMonstruos.construir("MonstruoDistancia");
 	Monstruos m2 = FabricaMonstruos.construir("MonstruoCuerpo");
 	Monstruos m3 = FabricaMonstruos.construir("MonstruoCuerpo"); 
+	
+	
+		
 	
 	public void seleccionUsuario() {
 		
@@ -43,7 +49,39 @@ public class Mecanica {
 
 	}
 	
+	public void seleccionDificultad() {
+		
+		System.out.println ("Que nivel dificultad deseas? Presiona 1 para FACIL, 2 para NORMAL o 3 para DFICIL");
+		
+		int dificultad = sc.nextInt();
+
+		if(dificultad == 1) {
+			
+						
+			System.out.println("Has elegido el nivel facil. El juego comenzar intantneamente. Buena Suerte!");
+			ta.setContadorMonstruos(5);
+		    
+			
+		} else if (dificultad == 2){
+			
+			System.out.println("Has elegido el nivel medio. El juego comenzar intantneamente. Buena Suerte!");
+			
+			ta.setContadorMonstruos(15);
+			
+	} else if (dificultad == 3){
+			
+			System.out.println("Has elegido el nivel dificil. El juego comenzar intantneamente. Buena Suerte!");
+			
+			ta.setContadorMonstruos(30);
+		
+								
+	}
+
+		
+	}
+	
 	public void menuSeleccion() {
+		
 		
 		System.out.println("-------------------------------------------------------------");
 		System.out.println("\t Es momento de posicionar sus plantas en el tablero");
@@ -51,9 +89,10 @@ public class Mecanica {
 		
 		System.out.println("TABLERO ");
 		System.out.println("-------------------");
+		ta.pintarTablero();
 		System.out.println("");
 		
-		ta.pintarTablero();
+	
 		System.out.println("");
 		
 	
@@ -74,7 +113,7 @@ public class Mecanica {
 		System.out.println("Que planta desea agregar? \nUsted cuenta con los siguientes recursos: " + "Trebol: " + recursos.getTrebol() + ", Agua: " +  recursos.getAgua());
 		
 		int eleccionPlanta = sc.nextInt();
-		
+		if(ta.buscarGanador()) {eleccionPlanta=6;}
 		switch(eleccionPlanta) {
 		
 		case 1: 
@@ -143,230 +182,18 @@ public class Mecanica {
 			
 		case 5:
 			
-			System.out.println("Empieza el turno.");
 			
-			System.out.println(" ");
-			
-			Soleado soleado= new Soleado();
-			
-			Lluvioso lluvioso = new Lluvioso();
-			
-			int NRClimas = (int)(Math.random()*3+0);
-		
-			
-			if (NRClimas == 0) {
-				
-				System.out.println("Jugarás en un clima soleado, preparate!");
-				
-				soleado.BajarDefensa(planta);
-				
+			if(ta.getContadorMonstruos() > 0) {
+			ta.agregarMonstruo(ta.monstruoRandom());
 			}
-			
-			else if (NRClimas == 1) {
-				
-				System.out.println("Jugarás en un clima nublado, preparate!");
-				
-			
-			}
-			
-			else if (NRClimas == 2) {
-				
-				System.out.println("Jugarás en un clima lluvioso, preparate!");
-				
-				lluvioso.AgregarVidayPoder(planta);
-				
-			}
-
-			System.out.println(" ");
-			
-			System.out.println ("Qué nivel dificultad deseas? Presiona 1 para FÁCIL, 2 para NORMAL o 3 para DÍFICIL");
-			
-			int dificultad = sc.nextInt();
-			
-			
-			
-		if(dificultad == 1) {
-				
-				// Posicionar 5 monstruos a casilleros de la base
-				
-				System.out.println("Has elegido el nivel fácil. El juego comenzar intantáneamente. Buena Suerte!");
-				
-				System.out.println(" ");
-				
-				if (NRClimas == 1) {
-					
-					for (int i = 0; i < 2; i++) {
-					    
-					    ta.agregarMonstruo(m1);						
-					
-						ta.agregarMonstruo(m2);
-					
-						ta.moverMonstruo();
-							
-						ta.pintarTablero();
-									    
-						
-						
-						} 
-									    
-				
-						
-						
-			            System.out.println("Fin del juego. Gracias por jugar!");
-			            
-			            break;
-					
-						
-				 }else if (NRClimas != 1) {
-					
-					 for (int i = 0; i < 2; i++) {
-			    
-					    ta.agregarMonstruo(m1);
-						
-		                ta.moverMonstruo();
-						
-					    ta.pintarTablero();
-						
-					
-						ta.agregarMonstruo(m2);
-				
-						ta.moverMonstruo();
-							
-						ta.pintarTablero();
-							    
-			
-				
-					 	}
-				
-				
-	            System.out.println("Fin del juego. Gracias por jugar!");
-	            
-	            break;
-			
-				
-			    
-				
-		} else if (dificultad == 2){
-				
-				System.out.println("Has elegido el nivel medio. El juego comenzar intantáneamente. Buena Suerte!");
-				
-				// Posicionar 15 monstruos
-                   if (NRClimas == 1) {
-					
-					for (int i = 0; i < 7; i++) {
-					    
-					    ta.agregarMonstruo(m1);						
-					
-						ta.agregarMonstruo(m2);
-					
-						ta.moverMonstruo();
-							
-						ta.pintarTablero();
-									    
-						
-						
-						} 
-						
-						
-			            System.out.println("Fin del juego. Gracias por jugar!");
-			            
-			            break;
-                   } 
-                   
-						
-		}else if (NRClimas != 1) {
-					
-				
-				for (int i = 0; i < 7; i++) {
-				    
-				    ta.agregarMonstruo(m1);
-					
-	                ta.moverMonstruo();
-					
-				    ta.pintarTablero();
-					
-				
-					ta.agregarMonstruo(m2);
-					
-					ta.moverMonstruo();
-						
-					ta.pintarTablero();
-								    
-					
-					
-					}
-					
-					
-		            System.out.println("Fin del juego. Gracias por jugar!");
-		            
-		            break;
-		            
-				}
-				
-		} else if (dificultad == 3){
-				
-				System.out.println("Has elegido el nivel díficil. El juego comenzar intantáneamente. Buena Suerte!");
-				
-				// Posicionar 30 monstruos
-			
-				 if (NRClimas == 1) {
-						
-						for (int i = 0; i < 16; i++) {
-						    
-						    ta.agregarMonstruo(m1);						
-						
-							ta.agregarMonstruo(m2);
-						
-							ta.moverMonstruo();
-								
-							ta.pintarTablero();
-										    
-							
-							
-							} 
-							
-							
-				            System.out.println("Fin del juego. Gracias por jugar!");
-				            
-				            break;
-						
-							
-					}else if (NRClimas != 1) {
-						
-					
-                    for (int i = 0; i < 16; i++) {
-				    
-				    ta.agregarMonstruo(m1);
-					
-	                ta.moverMonstruo();
-				
-				    ta.pintarTablero();
-					
-				
-					ta.agregarMonstruo(m2);
-					
-					ta.moverMonstruo();
-						
-					ta.pintarTablero();
-								    
-					
-					
-					}
-					
-					
-		            System.out.println("Fin del juego. Gracias por jugar!");
-		            
-		            break;
-				
-					}		
-			}	
-			
-			
-			
-	
-			
-			
-			
+			ta.pintarTablero();
+			ta.moverMonstruo();
+			ta.buscarPelea();
+			ta.limpiarMuertos();
+		if(ta.buscarGanador()==false) {
+			menuSeleccion();
+		}
+			break;
 			
 			
 			
@@ -384,9 +211,9 @@ public class Mecanica {
 		} 
 	
 		
-		
 	
-		
+	
 	}
-
 }
+
+	

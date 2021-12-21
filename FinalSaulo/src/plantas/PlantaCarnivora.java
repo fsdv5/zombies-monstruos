@@ -5,10 +5,21 @@ import unidades.Unidades;
 public class PlantaCarnivora extends Plantas {
 	
 
+	int contadorAtaques = 4;
+	
 	public PlantaCarnivora(String nombre, int salud, int costeTrebol, int ataque, int defensa,int contador) {
-		super("PlantaCarnivora", 50, 6, ataque, 9,0);
-		super.setAtaquexsegundo(4);
+		super("PlantaCarnivora", 50, 6, 1000, 9,0);
 		
+		
+	}
+	
+	
+public void atacar(Unidades unidad) {
+		if(contadorAtaques == 0) {
+		
+		 unidad.setSalud(unidad.getSalud() - this.ataque);
+		}
+		 contador--;
 	}
 
 	public String localizador() {
