@@ -142,7 +142,6 @@ public class Tablero {
 			
 		} else if(TableroJuego[i][j] instanceof Monstruos && j == 0) {
 			buscarGanador();
-			System.out.println("GANAN LOS MONSTRUOS");
 			
 			} else {}
 		}
@@ -178,63 +177,53 @@ public class Tablero {
 
 	public void buscarPelea() {
 
-        for(int i=0; i<TableroJuego.length; i++) {
-            for(int j=0; j<TableroJuego.length; j++) {
-
-                if(TableroJuego[i][j] instanceof Plantas) 
-                        {
-                        
-                            for (int k = 0; k < TableroJuego.length; k++) 
-                            { 
-                                if (TableroJuego[i][k] instanceof Monstruos) 
-                                    {
-                                        TableroJuego[i][j].atacar(TableroJuego[i][k]);
-                                       
-                                    }
-                            }
-
-                        } 
-
-                else {}
-                    if(TableroJuego[i][j] instanceof Monstruos){
-
-                    if(TableroJuego[i][j] instanceof MonstruoDistancia) 
-                        {
-                            for (int k = 0; k < TableroJuego.length; k++)
-                            {
-                                if (TableroJuego[i][k] instanceof Plantas) 
-                                {
-                                    TableroJuego[i][j].atacar(TableroJuego[i][k]);
-                                  
-                                }
-                            }
-
+        for (int i = 0; i < TableroJuego.length; i++) {
+            for (int j = 0; j < TableroJuego.length; j++) {
+// Se estableció un ciclo en el cual K reserva el índice del monstruo; con la finalidad de encontrar la posición exacta del monstruo para luego realizar el ataque de la planta.
+                if (TableroJuego[i][j] instanceof Plantas) {
+                    System.out.println(
+                            "hay una " + TableroJuego[i][j].getNombre() + " en la posicion: " + i + " columna " + j);
+                    for (int k = 0; k < TableroJuego.length; k++) {
+                        if (TableroJuego[i][k] instanceof Monstruos) {
+                            TableroJuego[i][j].atacar(TableroJuego[i][k]);
+                            System.out.println("la " + TableroJuego[i][j].getNombre() + " ataca al "
+                                    + TableroJuego[i][k].getNombre());
                         }
-                    else 
-                        {
-                           
-                        } 
-
-                } else if (TableroJuego[i][j] instanceof MonstruoCuerpo) 
-                  {
-                	for (int k = 0; k < TableroJuego.length; k++)
-                    {                            
-                		if (TableroJuego[i][j-1] instanceof Plantas);
-                		{
-                	                		
-                			TableroJuego[i][j].atacar(TableroJuego[i][j-1]);
-                        } 
-                		}
-                		}
-                        else 
-                            {
-                         
-                            }
-                        }
-
                     }
 
                 }
+
+                else {
+                }
+// Se realizó una búsqueda general en los índices para ver si se encuentra instanciado algún monstruo; para luego realizar un filtrado entre los monstruos a distancia y CaC.
+                if (TableroJuego[i][j] instanceof Monstruos) {
+                    System.out.println(
+                            "hay un " + TableroJuego[i][j].getNombre() + " en la posicion: " + i + " columna " + j);
+// Se estableció un ciclo en el cual K reserva el índice de la planta; con la finalidad de encontrar la posición exacta de la misma para luego realizar el ataque.
+                    if (TableroJuego[i][j] instanceof MonstruoDistancia) {
+                        for (int k = 0; k < TableroJuego.length; k++) {
+                            if (TableroJuego[i][k] instanceof Plantas) {
+                                TableroJuego[i][j].atacar(TableroJuego[i][k]);
+                                System.out.println("el " + TableroJuego[i][j].getNombre() + " ataca a la "
+                                        + TableroJuego[i][k].getNombre());
+                            }
+                        }
+// Se estableció un ciclo en el cual H reserva el índice de la planta; con la finalidad de encontrar la posición exacta entre el monstruo y la misma.
+                    } else if (TableroJuego[i][j] instanceof MonstruoCuerpo) {
+                        for (int h = 0; h < TableroJuego.length; h++) {
+                            if (TableroJuego[i][h] instanceof Plantas) {
+                                if (TableroJuego[i][h] == TableroJuego[i][j - 1]) {
+                                    TableroJuego[i][j].atacar(TableroJuego[i][h]);
+                                    System.out.println("el " + TableroJuego[i][j].getNombre() + " ataca a la "
+                                            + TableroJuego[i][h].getNombre());
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 	
 	
 	
@@ -275,6 +264,20 @@ public class Tablero {
 
 			
 	}
+
+
+
+	public Unidades[][] getTableroJuego() {
+		return TableroJuego;
+	}
+
+
+
+
+	public void setTableroJuego(Unidades[][] tableroJuego) {
+		TableroJuego = tableroJuego;
+	}
+
 
 
 

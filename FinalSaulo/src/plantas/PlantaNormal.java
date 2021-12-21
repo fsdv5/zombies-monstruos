@@ -4,8 +4,8 @@ public class PlantaNormal extends Plantas {
 	
 	
 	
-	public PlantaNormal(String nombre, int salud, int costeTrebol, int ataque, int defensa, int contador) {
-		super("PlantaNormal", 30, 3, 10, 5,0);
+	public PlantaNormal(String nombre, int salud, int costeTrebol, int ataque, int defensa) {
+		super("Planta Normal", 30, 3, 10, 5);
 
 
 		

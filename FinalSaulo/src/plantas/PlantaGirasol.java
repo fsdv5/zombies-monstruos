@@ -5,8 +5,8 @@ import tablero.Tablero;
 public class PlantaGirasol extends Plantas{
 	
 
-	public PlantaGirasol(String nombre, int salud, int costeTrebol, int ataque, int defensa,int contador) {
-		super("PlantaGirasol", 30, 3, 2, 5,0);
+	public PlantaGirasol(String nombre, int salud, int costeTrebol, int ataque, int defensa) {
+		super("Planta Girasol", 30, 3, 2, 5);
 
 		
 	}

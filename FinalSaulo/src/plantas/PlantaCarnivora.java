@@ -7,8 +7,8 @@ public class PlantaCarnivora extends Plantas {
 
 	int contadorAtaques = 4;
 	
-	public PlantaCarnivora(String nombre, int salud, int costeTrebol, int ataque, int defensa,int contador) {
-		super("PlantaCarnivora", 50, 6, 1000, 9,0);
+	public PlantaCarnivora(String nombre, int salud, int costeTrebol, int ataque, int defensa) {
+		super("PlantaCarnivora", 50, 6, 1000, 9);
 		
 		
 	}
@@ -30,11 +30,11 @@ public void atacar(Unidades unidad) {
 
 	@Override
 	public void mover() {
-		// TODO Auto-generated method stub
+		// no se mueve
 		
 	}
 	
-	//Contador turnos
+	
 	
 
 	

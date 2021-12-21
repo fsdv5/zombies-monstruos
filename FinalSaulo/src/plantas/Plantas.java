@@ -13,8 +13,8 @@ public abstract class  Plantas extends Unidades {
 
 
 
-	public Plantas(String nombre, int salud, int costeTrebol, int ataque, int defensa,int contador) {
-		super(nombre, salud, ataque, defensa ,contador);
+	public Plantas(String nombre, int salud, int costeTrebol, int ataque, int defensa) {
+		super(nombre, salud, ataque, defensa);
 		this.costeTrebol =  costeTrebol;
 		
 	}
