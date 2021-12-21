@@ -18,8 +18,9 @@ public void atacar(Unidades unidad) {
 		if(contadorAtaques == 0) {
 		
 		 unidad.setSalud(unidad.getSalud() - this.ataque);
+		 contadorAtaques=4;
 		}
-		 contador--;
+		 contadorAtaques--;
 	}
 
 	public String localizador() {

@@ -199,9 +199,16 @@ public class Tablero {
                         } 
 
                 } else if (TableroJuego[i][j] instanceof MonstruoCuerpo) 
-                        {
-                            TableroJuego[i][j].atacar(TableroJuego[i][j-1]);
+                  {
+                	for (int k = 0; k < TableroJuego.length; k++)
+                    {                            
+                		if (TableroJuego[i][k] instanceof Plantas);
+                		{
+                	                		
+                			TableroJuego[i][j].atacar(TableroJuego[i][j-1]);
                         } 
+                		}
+                		}
                         else 
                             {
                          
